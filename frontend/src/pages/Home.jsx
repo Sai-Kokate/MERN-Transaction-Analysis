@@ -61,32 +61,35 @@ function Home() {
 
   return (
     <div className="flex flex-col w-screen h-screen overflow-x-hidden">
-      <h1 className="text-4xl  text-center font-bold mt-4">
+      <h1 className="text-4xl  text-center font-bold mt-4 underline text-indigo-800 mb-4">
         Transaction Dashboard
       </h1>
-      <div className="flex justify-between w-2/3 mx-auto text-2xl font-semibold mt-4">
+      <div className="flex justify-between w-2/3 mx-auto text-2xl font-semibold mt-4 text-indigo-600">
         <input
           type="text"
           placeholder="Search transactions"
           value={searchText}
           onChange={handleSearchChange}
-          className="border rounded-md text-center"
+          className="border-2 border-gray-400 rounded-xl px-4 pb-1 bg-transparent text-indigo-600 placeholder:text-indigo-600 placeholder:opacity-50 text-2xl"
         />
 
-        <select
-          value={selectedMonth}
-          onChange={handleMonthChange}
-          className="border rounded-md text-center"
-        >
-          {/* Dropdown options for months */}
-          {monthsArray.map((month) => {
-            return (
-              <option key={month.number} value={month.number}>
-                {month.name}
-              </option>
-            );
-          })}
-        </select>
+        <div className="flex gap-2">
+          <div>Month : </div>
+          <select
+            value={selectedMonth}
+            onChange={handleMonthChange}
+            className=" rounded-xl text-center bg-transparent border-2 border-gray-400"
+          >
+            {/* Dropdown options for months */}
+            {monthsArray.map((month) => {
+              return (
+                <option key={month.number} value={month.number}>
+                  {month.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
       </div>
 
       <div className="mt-4 w-11/12 mx-auto flex justify-center p-4">
@@ -97,17 +100,17 @@ function Home() {
       {/* Page Buttons */}
       <div className="mt w-10/12 mx-auto flex justify-between ">
         <span className="text-lg font-semibold">Page No : {currentPage}</span>
-        <div>
+        <div className="flex gap-4">
           <button
             onClick={handlePreviousPage}
-            className="rounded-md border bg-gray-300 p-2"
+            className="rounded-md border-none bg-indigo-300 p-2 hover:bg-cyan-200"
           >
             Previous
           </button>
-          <span> - </span>
+          <sapn>_</sapn>
           <button
             onClick={handleNextPage}
-            className="rounded-md border bg-gray-300 p-2"
+            className="rounded-md border-none bg-indigo-300 p-2 hover:bg-cyan-200"
           >
             Next
           </button>

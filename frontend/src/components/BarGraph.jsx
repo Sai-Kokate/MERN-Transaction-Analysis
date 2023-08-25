@@ -2,12 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { monthsArray } from "../utils/months";
-// Import everything from the chart.js/auto module
 import ChartJS from "chart.js/auto";
 
 const BarGraph = ({ month }) => {
-  // Ref for the chart instance
-  // const chartRef = useRef(null);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [barChartData, setBarChartData] = useState([]);
 
@@ -42,20 +39,13 @@ const BarGraph = ({ month }) => {
     ],
   };
 
-  // Function to destroy the previous chart instance before creating a new one
-  // const destroyChart = () => {
-  //   if (chartRef.current) {
-  //     chartRef.current.destroy();
-  //   }
-  // };
   return (
     <div className="mt-4 w-10/12 h-full mx-auto flex flex-col gap-4 items-center p-4">
-      <h2 className="font-bold text-2xl">
+      <h2 className="font-bold text-3xl text-indigo-800">
         Bar Chart for Selected Month: {monthsArray[month - 1].name}
       </h2>
-      {/* Call the destroyChart function before rendering the new chart */}
-      {/* {destroyChart()} */}
-      <Bar data={chartData} />
+
+      <Bar data={chartData} className="text-black" />
     </div>
   );
 };

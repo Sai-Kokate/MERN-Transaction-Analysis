@@ -34,14 +34,14 @@ const Statistics = ({ month }) => {
   }, [month]);
 
   return (
-    <div>
+    <div className="w-1/3 ">
       {loading && <Loader />}
       {!loading && (
         <div className="w-full flex flex-col">
-          <h2 className="font-bold text-2xl mx-auto">
+          <h2 className="font-bold text-3xl mx-auto mb-4 text-indigo-800">
             Statistics - {monthsArray[month - 1].name}
           </h2>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 font-semibold text-xl">
             <div className="flex justify-between">
               <span>Total Sale</span>
               <span>{sale}</span>

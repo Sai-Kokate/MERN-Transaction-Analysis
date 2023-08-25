@@ -42,7 +42,7 @@ const PieChart = ({ month }) => {
   };
   return (
     <div className="mt-4 w-10/12 h-full mx-auto flex flex-col gap-4 items-center p-4">
-      <h2 className="font-bold text-2xl">
+      <h2 className="font-bold text-3xl text-indigo-800">
         Pie Chart for Selected Month: {monthsArray[month - 1].name}
       </h2>
       <Pie data={chartData} />
