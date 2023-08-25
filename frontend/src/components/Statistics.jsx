@@ -34,7 +34,7 @@ const Statistics = ({ month }) => {
   }, [month]);
 
   return (
-    <div className="w-1/3 ">
+    <div className="w-1/3 flex justify-center ">
       {loading && <Loader />}
       {!loading && (
         <div className="w-full flex flex-col">
